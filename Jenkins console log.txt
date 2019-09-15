@@ -1,0 +1,575 @@
+Started by user admin
+Obtained Jenkinsfile from git https://github.com/pankaj03gupta/Projectmanger_Backend
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Still waiting to schedule task
+Waiting for next available executor
+Running on Jenkins in C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+No credentials specified
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/pankaj03gupta/Projectmanger_Backend # timeout=10
+Fetching upstream changes from https://github.com/pankaj03gupta/Projectmanger_Backend
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --progress https://github.com/pankaj03gupta/Projectmanger_Backend +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 9138fd882477c3e934dfb184ace15a5a38f9e22d (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 9138fd882477c3e934dfb184ace15a5a38f9e22d
+Commit message: "Pipeline details from CI server and EMMA coverage report"
+ > git.exe rev-list --no-walk 9138fd882477c3e934dfb184ace15a5a38f9e22d # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout from SCM GIT)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+No credentials specified
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/pankaj03gupta/Projectmanger_Backend # timeout=10
+Fetching upstream changes from https://github.com/pankaj03gupta/Projectmanger_Backend
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --progress https://github.com/pankaj03gupta/Projectmanger_Backend +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 9138fd882477c3e934dfb184ace15a5a38f9e22d (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 9138fd882477c3e934dfb184ace15a5a38f9e22d
+Commit message: "Pipeline details from CI server and EMMA coverage report"
+[Pipeline] echo
+Git checkout succeeded
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build & Analyse)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline>mvn clean install sonar:sonar 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.projectManager:projectManager >------------------
+[INFO] Building projectManager 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ projectManager ---
+[INFO] Deleting C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ projectManager ---
+[INFO] argLine set to "-javaagent:C:\\Windows\\system32\\config\\systemprofile\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.7.9\\org.jacoco.agent-0.7.9-runtime.jar=destfile=C:\\Program Files (x86)\\Jenkins\\workspace\\Project_manager_Pipeline\\target\\jacoco.exec"
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ projectManager ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ projectManager ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ projectManager ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ projectManager ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ projectManager ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.projectManager.projectManager.ProjectManagerApplicationTests
+03:42:55.090 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.099 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+03:42:55.114 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+03:42:55.144 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.projectManager.projectManager.ProjectManagerApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+03:42:55.160 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.projectManager.projectManager.ProjectManagerApplicationTests], using SpringBootContextLoader
+03:42:55.165 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.projectManager.projectManager.ProjectManagerApplicationTests]: class path resource [com/projectManager/projectManager/ProjectManagerApplicationTests-context.xml] does not exist
+03:42:55.165 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.projectManager.projectManager.ProjectManagerApplicationTests]: class path resource [com/projectManager/projectManager/ProjectManagerApplicationTestsContext.groovy] does not exist
+03:42:55.165 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.projectManager.projectManager.ProjectManagerApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+03:42:55.166 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.projectManager.projectManager.ProjectManagerApplicationTests]: ProjectManagerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+03:42:55.214 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.310 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\classes\com\projectManager\projectManager\ProjectManagerApplication.class]
+03:42:55.311 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.projectManager.projectManager.ProjectManagerApplication for test class com.projectManager.projectManager.ProjectManagerApplicationTests
+03:42:55.460 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.projectManager.projectManager.ProjectManagerApplicationTests]: using defaults.
+03:42:55.461 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+03:42:55.508 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@367d34c0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4ce25e47, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6380e9e9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@350da119, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a09484c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@34c7232c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@50ec4bfc, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@8b13d91, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@285a4fe3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2589d787, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1788cb61, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@16d431b4]
+03:42:55.513 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.514 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.518 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.519 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.520 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.521 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.533 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@5d850a25 testClass = ProjectManagerApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@b022551 testClass = ProjectManagerApplicationTests, locations = '{}', classes = '{class com.projectManager.projectManager.ProjectManagerApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4e904fd5, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@421a4ee1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@9fec931, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6c8909c3], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+03:42:55.534 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.534 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.projectManager.projectManager.ProjectManagerApplicationTests]
+03:42:55.565 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.6.RELEASE)
+
+2019-09-16 03:42:55.989  INFO 7172 --- [           main] c.p.p.ProjectManagerApplicationTests     : Starting ProjectManagerApplicationTests on Javafs with PID 7172 (started by JAVAFS$ in C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline)
+2019-09-16 03:42:55.991  INFO 7172 --- [           main] c.p.p.ProjectManagerApplicationTests     : No active profile set, falling back to default profiles: default
+2019-09-16 03:42:56.083 DEBUG 7172 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3dd66ff5
+2019-09-16 03:42:57.123  INFO 7172 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-16 03:42:57.215  INFO 7172 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82ms. Found 4 repository interfaces.
+2019-09-16 03:42:57.914  INFO 7172 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$44a7ec2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-16 03:42:57.962  INFO 7172 --- [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2019-09-16 03:42:57.984  INFO 7172 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a010272b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-16 03:42:58.243  INFO 7172 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-09-16 03:42:58.494  INFO 7172 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-09-16 03:42:58.581  INFO 7172 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-16 03:42:58.698  INFO 7172 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2019-09-16 03:42:58.700  INFO 7172 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-09-16 03:42:58.923  INFO 7172 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-09-16 03:42:59.192  INFO 7172 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2019-09-16 03:43:00.136  INFO 7172 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-09-16 03:43:01.136 DEBUG 7172 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-09-16 03:43:01.450  INFO 7172 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-16 03:43:01.468 DEBUG 7172 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-09-16 03:43:01.527  WARN 7172 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-09-16 03:43:01.576 DEBUG 7172 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2019-09-16 03:43:01.606 DEBUG 7172 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-09-16 03:43:01.633 DEBUG 7172 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-09-16 03:43:02.040  INFO 7172 --- [           main] c.p.p.ProjectManagerApplicationTests     : Started ProjectManagerApplicationTests in 6.463 seconds (JVM running for 7.659)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.239 s - in com.projectManager.projectManager.ProjectManagerApplicationTests
+[INFO] Running com.projectManager.projectManager.ProjectManagerControllerTest
+2019-09-16 03:43:02.175  INFO 7172 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.projectManager.projectManager.ProjectManagerControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-09-16 03:43:02.179  INFO 7172 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-09-16 03:43:02.180  INFO 7172 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@66ce1208, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@64b8e2c1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@248f8906, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6e90a1ae, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7858a026, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5bd5fb06, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@34a9ec3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@683cc2d5, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@55580664, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2121ca02, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@764af463, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@78eeaa15]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.6.RELEASE)
+
+2019-09-16 03:43:02.330  INFO 7172 --- [           main] c.p.p.ProjectManagerControllerTest       : Starting ProjectManagerControllerTest on Javafs with PID 7172 (started by JAVAFS$ in C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline)
+2019-09-16 03:43:02.331  INFO 7172 --- [           main] c.p.p.ProjectManagerControllerTest       : The following profiles are active: test
+2019-09-16 03:43:02.498  INFO 7172 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-16 03:43:02.514  INFO 7172 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 4 repository interfaces.
+2019-09-16 03:43:02.574  INFO 7172 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$44a7ec2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-16 03:43:02.581  INFO 7172 --- [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2019-09-16 03:43:02.607  INFO 7172 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a010272b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-16 03:43:02.979  INFO 7172 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2019-09-16 03:43:03.009  INFO 7172 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-09-16 03:43:03.009  INFO 7172 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-09-16 03:43:03.163  INFO 7172 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-09-16 03:43:03.164 DEBUG 7172 --- [           main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-09-16 03:43:03.164  INFO 7172 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 830 ms
+2019-09-16 03:43:03.360  INFO 7172 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-09-16 03:43:03.648  INFO 7172 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-09-16 03:43:03.668  INFO 7172 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-16 03:43:03.674  INFO 7172 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: drop table parents if exists
+Hibernate: drop table projects if exists
+Hibernate: drop table tasks if exists
+Hibernate: drop table users if exists
+Hibernate: create table parents (parent_id bigint generated by default as identity, parent_name varchar(255), primary key (parent_id))
+Hibernate: create table projects (project_id bigint generated by default as identity, end_date timestamp, priority integer not null, project_name varchar(255), project_status boolean not null, start_date timestamp, user_id bigint, primary key (project_id))
+Hibernate: create table tasks (task_id bigint generated by default as identity, end_date timestamp, priority integer not null, start_date timestamp, task_name varchar(255), task_status boolean not null, parent_id bigint, project_id bigint, user_id bigint, primary key (task_id))
+Hibernate: create table users (user_id bigint generated by default as identity, employee_id bigint not null, first_name varchar(255) not null, last_name varchar(255) not null, mgr_ind boolean not null, primary key (user_id))
+Hibernate: alter table users add constraint UK_d1s31g1a7ilra77m65xmka3ei unique (employee_id)
+Hibernate: alter table projects add constraint FKhswfwa3ga88vxv1pmboss6jhm foreign key (user_id) references users
+Hibernate: alter table tasks add constraint FKd5uykk7t2236qvwuampi4vlqb foreign key (parent_id) references parents
+Hibernate: alter table tasks add constraint FKsfhn82y57i3k9uxww1s007acc foreign key (project_id) references projects
+Hibernate: alter table tasks add constraint FK6s1ob9k4ihi75xbxe2w0ylsdh foreign key (user_id) references users
+2019-09-16 03:43:03.850  INFO 7172 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@5f2fcae3'
+2019-09-16 03:43:03.851  INFO 7172 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-09-16 03:43:03.985 DEBUG 7172 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-09-16 03:43:04.116  INFO 7172 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-16 03:43:04.125 DEBUG 7172 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-09-16 03:43:04.129  WARN 7172 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-09-16 03:43:04.152 DEBUG 7172 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2019-09-16 03:43:04.165 DEBUG 7172 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-09-16 03:43:04.172 DEBUG 7172 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-09-16 03:43:04.400  INFO 7172 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 56936 (http) with context path ''
+2019-09-16 03:43:04.402  INFO 7172 --- [           main] c.p.p.ProjectManagerControllerTest       : Started ProjectManagerControllerTest in 2.216 seconds (JVM running for 10.021)
+Hibernate: insert into parents (parent_id, parent_name) values (null, ?)
+Hibernate: insert into users (user_id, employee_id, first_name, last_name, mgr_ind) values (null, ?, ?, ?, ?)
+Hibernate: insert into projects (project_id, end_date, user_id, priority, project_name, project_status, start_date) values (null, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into tasks (task_id, end_date, parent_id, priority, project_id, start_date, task_name, task_status, user_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?)
+2019-09-16 03:43:04.541 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:56936/api/v1/getTasks
+2019-09-16 03:43:04.545 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2019-09-16 03:43:04.652  INFO 7172 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-16 03:43:04.653  INFO 7172 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-09-16 03:43:04.653 DEBUG 7172 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-09-16 03:43:04.669 DEBUG 7172 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-09-16 03:43:04.669  INFO 7172 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2019-09-16 03:43:04.682 DEBUG 7172 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/getTasks", parameters={}
+2019-09-16 03:43:04.690 DEBUG 7172 --- [o-auto-1-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.util.List<com.projectManager.projectManager.domain.Task> com.projectManager.projectManager.controller.ProjectManagerController.getTaskDetails()
+2019-09-16 03:43:04.729  INFO 7172 --- [o-auto-1-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select parent0_.parent_id as parent_i1_0_0_, parent0_.parent_name as parent_n2_0_0_ from parents parent0_ where parent0_.parent_id=?
+Hibernate: select project0_.project_id as project_1_1_0_, project0_.end_date as end_date2_1_0_, project0_.user_id as user_id7_1_0_, project0_.priority as priority3_1_0_, project0_.project_name as project_4_1_0_, project0_.project_status as project_5_1_0_, project0_.start_date as start_da6_1_0_, user1_.user_id as user_id1_3_1_, user1_.employee_id as employee2_3_1_, user1_.first_name as first_na3_3_1_, user1_.last_name as last_nam4_3_1_, user1_.mgr_ind as mgr_ind5_3_1_ from projects project0_ left outer join users user1_ on project0_.user_id=user1_.user_id where project0_.project_id=?
+2019-09-16 03:43:04.911 DEBUG 7172 --- [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2019-09-16 03:43:04.933 DEBUG 7172 --- [o-auto-1-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[com.projectManager.projectManager.domain.Task@35929477]]
+2019-09-16 03:43:05.013 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2019-09-16 03:43:05.013 DEBUG 7172 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-09-16 03:43:05.014 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select parent0_.parent_id as parent_i1_0_0_, parent0_.parent_name as parent_n2_0_0_ from parents parent0_ where parent0_.parent_id=?
+Hibernate: select project0_.project_id as project_1_1_0_, project0_.end_date as end_date2_1_0_, project0_.user_id as user_id7_1_0_, project0_.priority as priority3_1_0_, project0_.project_name as project_4_1_0_, project0_.project_status as project_5_1_0_, project0_.start_date as start_da6_1_0_, user1_.user_id as user_id1_3_1_, user1_.employee_id as employee2_3_1_, user1_.first_name as first_na3_3_1_, user1_.last_name as last_nam4_3_1_, user1_.mgr_ind as mgr_ind5_3_1_ from projects project0_ left outer join users user1_ on project0_.user_id=user1_.user_id where project0_.project_id=?
+Hibernate: delete from tasks where task_id=?
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_0_, user0_.employee_id as employee2_3_0_, user0_.first_name as first_na3_3_0_, user0_.last_name as last_nam4_3_0_, user0_.mgr_ind as mgr_ind5_3_0_ from users user0_ where user0_.user_id=?
+Hibernate: delete from projects where project_id=?
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+Hibernate: delete from users where user_id=?
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+Hibernate: delete from parents where parent_id=?
+Hibernate: insert into users (user_id, employee_id, first_name, last_name, mgr_ind) values (null, ?, ?, ?, ?)
+2019-09-16 03:43:05.145 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:56936/api/v1/getUsers
+2019-09-16 03:43:05.146 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2019-09-16 03:43:05.148 DEBUG 7172 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/getUsers", parameters={}
+2019-09-16 03:43:05.149 DEBUG 7172 --- [o-auto-1-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.util.List<com.projectManager.projectManager.domain.User> com.projectManager.projectManager.controller.ProjectManagerController.getUsersDetails()
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+2019-09-16 03:43:05.153 DEBUG 7172 --- [o-auto-1-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2019-09-16 03:43:05.153 DEBUG 7172 --- [o-auto-1-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[com.projectManager.projectManager.domain.User@6abcb62]]
+2019-09-16 03:43:05.155 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2019-09-16 03:43:05.155 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2019-09-16 03:43:05.156 DEBUG 7172 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+Hibernate: delete from users where user_id=?
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+Hibernate: insert into users (user_id, employee_id, first_name, last_name, mgr_ind) values (null, ?, ?, ?, ?)
+Hibernate: insert into parents (parent_id, parent_name) values (null, ?)
+Hibernate: insert into projects (project_id, end_date, user_id, priority, project_name, project_status, start_date) values (null, ?, ?, ?, ?, ?, ?)
+2019-09-16 03:43:05.175 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:56936/api/v1/addTask
+2019-09-16 03:43:05.176 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2019-09-16 03:43:05.178 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Writing [com.projectManager.projectManager.domain.Task@337eb3ab] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2019-09-16 03:43:05.183 DEBUG 7172 --- [o-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/addTask", parameters={}
+2019-09-16 03:43:05.185 DEBUG 7172 --- [o-auto-1-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.projectManager.projectManager.controller.ProjectManagerController.addTaskDetails(com.projectManager.projectManager.domain.Task)
+2019-09-16 03:43:05.208 DEBUG 7172 --- [o-auto-1-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.projectManager.projectManager.domain.Task@73cdffd0]
+Hibernate: insert into tasks (task_id, end_date, parent_id, priority, project_id, start_date, task_name, task_status, user_id) values (null, ?, ?, ?, ?, ?, ?, ?, ?)
+2019-09-16 03:43:05.224 DEBUG 7172 --- [o-auto-1-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-09-16 03:43:05.224 DEBUG 7172 --- [o-auto-1-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2019-09-16 03:43:05.224 DEBUG 7172 --- [o-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-09-16 03:43:05.226 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Response 200 OK
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select parent0_.parent_id as parent_i1_0_0_, parent0_.parent_name as parent_n2_0_0_ from parents parent0_ where parent0_.parent_id=?
+Hibernate: select project0_.project_id as project_1_1_0_, project0_.end_date as end_date2_1_0_, project0_.user_id as user_id7_1_0_, project0_.priority as priority3_1_0_, project0_.project_name as project_4_1_0_, project0_.project_status as project_5_1_0_, project0_.start_date as start_da6_1_0_, user1_.user_id as user_id1_3_1_, user1_.employee_id as employee2_3_1_, user1_.first_name as first_na3_3_1_, user1_.last_name as last_nam4_3_1_, user1_.mgr_ind as mgr_ind5_3_1_ from projects project0_ left outer join users user1_ on project0_.user_id=user1_.user_id where project0_.project_id=?
+Hibernate: delete from tasks where task_id=?
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_0_, user0_.employee_id as employee2_3_0_, user0_.first_name as first_na3_3_0_, user0_.last_name as last_nam4_3_0_, user0_.mgr_ind as mgr_ind5_3_0_ from users user0_ where user0_.user_id=?
+Hibernate: delete from projects where project_id=?
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+Hibernate: delete from users where user_id=?
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+Hibernate: delete from parents where parent_id=?
+2019-09-16 03:43:05.244 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:56936/api/v1/addUser
+2019-09-16 03:43:05.244 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2019-09-16 03:43:05.245 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Writing [com.projectManager.projectManager.domain.User@562c2d12] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2019-09-16 03:43:05.248 DEBUG 7172 --- [o-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/addUser", parameters={}
+2019-09-16 03:43:05.248 DEBUG 7172 --- [o-auto-1-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.projectManager.projectManager.controller.ProjectManagerController.addUsersDetails(com.projectManager.projectManager.domain.User)
+2019-09-16 03:43:05.249 DEBUG 7172 --- [o-auto-1-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.projectManager.projectManager.domain.User@7fc7d7f2]
+Hibernate: insert into users (user_id, employee_id, first_name, last_name, mgr_ind) values (null, ?, ?, ?, ?)
+2019-09-16 03:43:05.254 DEBUG 7172 --- [o-auto-1-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-09-16 03:43:05.255 DEBUG 7172 --- [o-auto-1-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2019-09-16 03:43:05.255 DEBUG 7172 --- [o-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-09-16 03:43:05.257 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Response 200 OK
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+Hibernate: delete from users where user_id=?
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+Hibernate: insert into users (user_id, employee_id, first_name, last_name, mgr_ind) values (null, ?, ?, ?, ?)
+Hibernate: insert into projects (project_id, end_date, user_id, priority, project_name, project_status, start_date) values (null, ?, ?, ?, ?, ?, ?)
+2019-09-16 03:43:05.270 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:56936/api/v1/getProjects
+2019-09-16 03:43:05.271 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2019-09-16 03:43:05.274 DEBUG 7172 --- [o-auto-1-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/getProjects", parameters={}
+2019-09-16 03:43:05.275 DEBUG 7172 --- [o-auto-1-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.util.List<com.projectManager.projectManager.domain.ProjectView> com.projectManager.projectManager.controller.ProjectManagerController.getProjectDetails()
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_0_, user0_.employee_id as employee2_3_0_, user0_.first_name as first_na3_3_0_, user0_.last_name as last_nam4_3_0_, user0_.mgr_ind as mgr_ind5_3_0_ from users user0_ where user0_.user_id=?
+Hibernate: select count(task0_.task_id) as col_0_0_ from tasks task0_ left outer join projects project1_ on task0_.project_id=project1_.project_id where project1_.project_id=?
+2019-09-16 03:43:05.314 DEBUG 7172 --- [o-auto-1-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2019-09-16 03:43:05.316 DEBUG 7172 --- [o-auto-1-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[com.projectManager.projectManager.domain.ProjectView@7222d053]]
+2019-09-16 03:43:05.319 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2019-09-16 03:43:05.319 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2019-09-16 03:43:05.320 DEBUG 7172 --- [o-auto-1-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_0_, user0_.employee_id as employee2_3_0_, user0_.first_name as first_na3_3_0_, user0_.last_name as last_nam4_3_0_, user0_.mgr_ind as mgr_ind5_3_0_ from users user0_ where user0_.user_id=?
+Hibernate: delete from projects where project_id=?
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+Hibernate: delete from users where user_id=?
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+2019-09-16 03:43:05.335 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:56936/api/v1/addParent
+2019-09-16 03:43:05.335 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2019-09-16 03:43:05.336 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Writing [com.projectManager.projectManager.domain.Parent@1ec1ec8c] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2019-09-16 03:43:05.338 DEBUG 7172 --- [o-auto-1-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/addParent", parameters={}
+2019-09-16 03:43:05.339 DEBUG 7172 --- [o-auto-1-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.projectManager.projectManager.controller.ProjectManagerController.addParentDetails(com.projectManager.projectManager.domain.Parent)
+2019-09-16 03:43:05.340 DEBUG 7172 --- [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.projectManager.projectManager.domain.Parent@24998c06]
+Hibernate: insert into parents (parent_id, parent_name) values (null, ?)
+2019-09-16 03:43:05.343 DEBUG 7172 --- [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-09-16 03:43:05.343 DEBUG 7172 --- [o-auto-1-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2019-09-16 03:43:05.343 DEBUG 7172 --- [o-auto-1-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-09-16 03:43:05.344 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Response 200 OK
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+Hibernate: delete from parents where parent_id=?
+Hibernate: insert into users (user_id, employee_id, first_name, last_name, mgr_ind) values (null, ?, ?, ?, ?)
+2019-09-16 03:43:05.354 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : HTTP POST http://localhost:56936/api/v1/addProject
+2019-09-16 03:43:05.355 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2019-09-16 03:43:05.356 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Writing [com.projectManager.projectManager.domain.Project@2abfd3a] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2019-09-16 03:43:05.360 DEBUG 7172 --- [o-auto-1-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/addProject", parameters={}
+2019-09-16 03:43:05.360 DEBUG 7172 --- [o-auto-1-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public void com.projectManager.projectManager.controller.ProjectManagerController.addProjectDetails(com.projectManager.projectManager.domain.Project)
+2019-09-16 03:43:05.361 DEBUG 7172 --- [o-auto-1-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.projectManager.projectManager.domain.Project@50e3fdfe]
+Hibernate: insert into projects (project_id, end_date, user_id, priority, project_name, project_status, start_date) values (null, ?, ?, ?, ?, ?, ?)
+2019-09-16 03:43:05.364 DEBUG 7172 --- [o-auto-1-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-09-16 03:43:05.364 DEBUG 7172 --- [o-auto-1-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2019-09-16 03:43:05.364 DEBUG 7172 --- [o-auto-1-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-09-16 03:43:05.365 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Response 200 OK
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_0_, user0_.employee_id as employee2_3_0_, user0_.first_name as first_na3_3_0_, user0_.last_name as last_nam4_3_0_, user0_.mgr_ind as mgr_ind5_3_0_ from users user0_ where user0_.user_id=?
+Hibernate: delete from projects where project_id=?
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+Hibernate: delete from users where user_id=?
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+Hibernate: insert into parents (parent_id, parent_name) values (null, ?)
+2019-09-16 03:43:05.380 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : HTTP GET http://localhost:56936/api/v1/getParents
+2019-09-16 03:43:05.380 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2019-09-16 03:43:05.382 DEBUG 7172 --- [o-auto-1-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/getParents", parameters={}
+2019-09-16 03:43:05.383 DEBUG 7172 --- [o-auto-1-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.util.List<com.projectManager.projectManager.domain.Parent> com.projectManager.projectManager.controller.ProjectManagerController.getParentDetails()
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+2019-09-16 03:43:05.385 DEBUG 7172 --- [o-auto-1-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [text/plain, application/json, application/*+json, */*] and supported [application/json]
+2019-09-16 03:43:05.385 DEBUG 7172 --- [o-auto-1-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[com.projectManager.projectManager.domain.Parent@71ee7d4]]
+2019-09-16 03:43:05.386 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Response 200 OK
+2019-09-16 03:43:05.386 DEBUG 7172 --- [           main] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2019-09-16 03:43:05.387 DEBUG 7172 --- [o-auto-1-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+Hibernate: select task0_.task_id as task_id1_2_, task0_.end_date as end_date2_2_, task0_.parent_id as parent_i7_2_, task0_.priority as priority3_2_, task0_.project_id as project_8_2_, task0_.start_date as start_da4_2_, task0_.task_name as task_nam5_2_, task0_.task_status as task_sta6_2_, task0_.user_id as user_id9_2_ from tasks task0_
+Hibernate: select project0_.project_id as project_1_1_, project0_.end_date as end_date2_1_, project0_.user_id as user_id7_1_, project0_.priority as priority3_1_, project0_.project_name as project_4_1_, project0_.project_status as project_5_1_, project0_.start_date as start_da6_1_ from projects project0_
+Hibernate: select user0_.user_id as user_id1_3_, user0_.employee_id as employee2_3_, user0_.first_name as first_na3_3_, user0_.last_name as last_nam4_3_, user0_.mgr_ind as mgr_ind5_3_ from users user0_
+Hibernate: select parent0_.parent_id as parent_i1_0_, parent0_.parent_name as parent_n2_0_ from parents parent0_
+Hibernate: delete from parents where parent_id=?
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.17 s - in com.projectManager.projectManager.ProjectManagerControllerTest
+2019-09-16 03:43:05.421 DEBUG 7172 --- [       Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3dd66ff5, started on Mon Sep 16 03:42:56 IST 2019
+2019-09-16 03:43:05.424  INFO 7172 --- [       Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-16 03:43:05.425  INFO 7172 --- [       Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-09-16 03:43:05.436  INFO 7172 --- [       Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-16 03:43:05.440  INFO 7172 --- [       Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-09-16 03:43:05.440  INFO 7172 --- [       Thread-8] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+Hibernate: drop table parents if exists
+2019-09-16 03:43:05.568  INFO 7172 --- [       Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-09-16 03:43:05.570  WARN 7172 --- [       Thread-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2019-09-16 03:43:05.570 ERROR 7172 --- [       Thread-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-09-16 03:43:05.572  WARN 7172 --- [       Thread-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2019-09-16 03:43:05.572 ERROR 7172 --- [       Thread-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-09-16 03:43:05.572  INFO 7172 --- [       Thread-8] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2019-09-16 03:43:05.573  INFO 7172 --- [       Thread-8] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-09-16 03:43:05.573  INFO 7172 --- [       Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2019-09-16 03:43:05.576  INFO 7172 --- [       Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2019-09-16 03:43:05.582  INFO 7172 --- [       Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (default-report) @ projectManager ---
+[INFO] Loading execution data file C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\jacoco.exec
+[INFO] Analyzed bundle 'projectManager' with 8 classes
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ projectManager ---
+[INFO] Building jar: C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\projectManager-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.1.6.RELEASE:repackage (repackage) @ projectManager ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ projectManager ---
+[INFO] Installing C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\projectManager-1.0-SNAPSHOT.jar to C:\Windows\system32\config\systemprofile\.m2\repository\com\projectManager\projectManager\1.0-SNAPSHOT\projectManager-1.0-SNAPSHOT.jar
+[INFO] Installing C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\pom.xml to C:\Windows\system32\config\systemprofile\.m2\repository\com\projectManager\projectManager\1.0-SNAPSHOT\projectManager-1.0-SNAPSHOT.pom
+[INFO] 
+[INFO] -----------------< com.projectManager:projectManager >------------------
+[INFO] Building projectManager 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- sonar-maven-plugin:3.4.0.905:sonar (default-cli) @ projectManager ---
+[INFO] User cache: C:\Windows\system32\config\systemprofile\.sonar\cache
+[INFO] SonarQube version: 7.4.0
+[INFO] Default locale: "en_IN", source code encoding: "UTF-8"
+[INFO] Publish mode
+[INFO] Load global settings
+[INFO] Load global settings (done) | time=81ms
+[INFO] Server id: BF41A1F2-AW0w9Babp0tonlFI4X3f
+[INFO] User cache: C:\Windows\system32\config\systemprofile\.sonar\cache
+[INFO] Load/download plugins
+[INFO] Load plugins index
+[INFO] Load plugins index (done) | time=63ms
+[INFO] Load/download plugins (done) | time=82ms
+[INFO] Loaded core extensions: 
+[INFO] Process project properties
+[INFO] Load project repositories
+[INFO] Load project repositories (done) | time=288ms
+[INFO] Load quality profiles
+[INFO] Load quality profiles (done) | time=43ms
+[INFO] Load active rules
+[INFO] Load active rules (done) | time=1154ms
+[INFO] Load metrics repository
+[INFO] Load metrics repository (done) | time=14ms
+[INFO] Project key: com.projectManager:projectManager
+[INFO] Project base dir: C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline
+[INFO] -------------  Scan projectManager
+[INFO] Base dir: C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline
+[INFO] Working dir: C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\sonar
+[INFO] Source paths: pom.xml, src/main/java
+[INFO] Test paths: src/test/java
+[INFO] Source encoding: UTF-8, default locale: en_IN
+[INFO] Load server rules
+[INFO] Load server rules (done) | time=250ms
+[INFO] Index files
+[INFO] 17 files indexed
+[INFO] Quality profile for java: Sonar way
+[INFO] Quality profile for xml: Sonar way
+[INFO] Sensor JavaSquidSensor [java]
+[INFO] Configured Java source version (sonar.java.source): 8
+[INFO] JavaClasspath initialization
+[INFO] JavaClasspath initialization (done) | time=15ms
+[INFO] JavaTestClasspath initialization
+[INFO] JavaTestClasspath initialization (done) | time=6ms
+[INFO] Java Main Files AST scan
+[INFO] 13 source files to be analyzed
+[WARNING] Classes not found during the analysis : [javax.annotation.meta.When]
+[INFO] Java Main Files AST scan (done) | time=1172ms
+[INFO] Java Test Files AST scan
+[INFO] 2 source files to be analyzed
+[INFO] 13/13 source files have been analyzed
+[WARNING] Classes not found during the analysis : [javax.annotation.meta.When]
+[INFO] Java Test Files AST scan (done) | time=181ms
+[INFO] Sensor JavaSquidSensor [java] (done) | time=1896ms
+[INFO] Sensor JaCoCo XML Report Importer [jacoco]
+[INFO] 2/2 source files have been analyzed
+[INFO] Sensor JaCoCo XML Report Importer [jacoco] (done) | time=69ms
+[INFO] Sensor SurefireSensor [java]
+[INFO] parsing [C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\surefire-reports]
+[INFO] Sensor SurefireSensor [java] (done) | time=43ms
+[INFO] Sensor JaCoCoSensor [java]
+[INFO] Analysing C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\jacoco.exec
+[INFO] No information about coverage per test.
+[INFO] Sensor JaCoCoSensor [java] (done) | time=73ms
+[INFO] Sensor SonarJavaXmlFileSensor [java]
+[INFO] 2 source files to be analyzed
+[INFO] 2/2 source files have been analyzed
+[INFO] Sensor SonarJavaXmlFileSensor [java] (done) | time=471ms
+[INFO] Sensor XML Sensor [xml]
+[WARNING] Metric 'comment_lines_data' is deprecated. Provided value is ignored.
+[INFO] Sensor XML Sensor [xml] (done) | time=86ms
+[INFO] Sensor Zero Coverage Sensor
+[INFO] Sensor Zero Coverage Sensor (done) | time=13ms
+[INFO] Sensor Java CPD Block Indexer
+[INFO] Sensor Java CPD Block Indexer (done) | time=20ms
+[INFO] 5 files had no CPD blocks
+[INFO] Calculating CPD for 8 files
+[INFO] CPD calculation finished
+[INFO] Analysis report generated in 457ms, dir size=114 KB
+[INFO] Analysis reports compressed in 206ms, zip size=55 KB
+[INFO] Analysis report uploaded in 41ms
+[INFO] ANALYSIS SUCCESSFUL, you can browse http://localhost:9000/dashboard?id=com.projectManager%3AprojectManager
+[INFO] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO] More about the report processing at http://localhost:9000/api/ce/task?id=AW02_L1TYUuPsa11HBTP
+[INFO] Task total time: 7.018 s
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  26.910 s
+[INFO] Finished at: 2019-09-16T03:43:16+05:30
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Publish Junit Report & Archive)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] archiveArtifacts
+Archiving artifacts
+Recording fingerprints
+[Pipeline] junit
+Recording test results
+[Pipeline] jacoco
+[JaCoCo plugin] Collecting JaCoCo coverage data...
+[JaCoCo plugin] **/*.exec;**/classes;**/src/main/java; locations are configured
+[JaCoCo plugin] Number of found exec files for pattern **/*.exec: 1
+[JaCoCo plugin] Saving matched execfiles:  C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\jacoco.exec
+[JaCoCo plugin] Saving matched class directories for class-pattern: **/classes: 
+[JaCoCo plugin]  - C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\bin\target\classes 0 files
+[JaCoCo plugin]  - C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\target\classes 13 files
+[JaCoCo plugin] Saving matched source directories for source-pattern: **/src/main/java: 
+[JaCoCo plugin] Source Inclusions: **/*.java
+[JaCoCo plugin] Source Exclusions: 
+[JaCoCo plugin] - C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\bin\src\main\java 0 files
+[JaCoCo plugin] - C:\Program Files (x86)\Jenkins\workspace\Project_manager_Pipeline\src\main\java 13 files
+[JaCoCo plugin] Loading inclusions files..
+[JaCoCo plugin] inclusions: []
+[JaCoCo plugin] exclusions: [**/src/test*]
+[JaCoCo plugin] Thresholds: JacocoHealthReportThresholds [minClass=0, maxClass=0, minMethod=0, maxMethod=0, minLine=0, maxLine=0, minBranch=0, maxBranch=0, minInstruction=0, maxInstruction=0, minComplexity=0, maxComplexity=0]
+[JaCoCo plugin] Publishing the results..
+[JaCoCo plugin] Loading packages..
+[JaCoCo plugin] Done.
+[JaCoCo plugin] Overall coverage: class: 100, method: 93, line: 91, branch: 100, instruction: 90
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
