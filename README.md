@@ -10,7 +10,7 @@ Application will run on ‘http://localhost:4200/’
 
 
 
-There 3 repository :
+There are 3 repository created , you can find the below details :
 1. Frontend repository : projectManager_Angular-master
 2. Backend repository : Projectmanger_Backend
 3. Application test and log details: projectmanagerApp-log
