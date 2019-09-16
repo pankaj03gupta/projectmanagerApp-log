@@ -8,3 +8,9 @@
 Application will run on ‘http://localhost:4200/’
 3.	Jar file is avaliable at ‘http://localhost:8080/job/Project_manager_Pipeline/lastSuccessfulBuild/artifact/’
 
+
+
+There 3 repository :
+1. Frontend repository : projectManager_Angular-master
+2. Backend repository : Projectmanger_Backend
+3. Application test and log details: projectmanagerApp-log
