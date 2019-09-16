@@ -15,3 +15,9 @@ There are 3 repository created , you can find the below details :
 2. Backend repository : Projectmanger_Backend
 3. Application test and log details: projectmanagerApp-log
 
+
+Git Hub path:
+https://github.com/pankaj03gupta/projectmanagerApp-log
+https://github.com/pankaj03gupta/projectManager_Angular-master
+https://github.com/pankaj03gupta/Projectmanger_Backend
+
