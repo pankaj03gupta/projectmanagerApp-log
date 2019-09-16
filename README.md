@@ -1,6 +1,6 @@
 # projectmanagerApp
 
-1.	Run  the Spring boot application from eclipse t , port is set to 8083
+1.	Run  the Spring boot application from eclipse  , port is set to 8083
 2.	Run the front end  from visual studio
 •	npm install  -g @angular/cli
 •	change the  directory to src/app folder
